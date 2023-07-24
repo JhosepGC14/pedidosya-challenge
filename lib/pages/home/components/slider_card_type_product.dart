@@ -13,7 +13,7 @@ class _SliderCardTypeProductState extends State<SliderCardTypeProduct> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 105,
       width: double.infinity,
       margin: const EdgeInsets.only(
         left: 20,
@@ -74,7 +74,7 @@ class CardTypeProducts extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/images/beer.png',
-                height: 80,
+                height: 70,
               ),
             ],
           )
