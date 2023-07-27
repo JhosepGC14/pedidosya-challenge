@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenge_pedidosya/shared/design/design.dart';
 
 class PageViewCardsPromotions extends StatefulWidget {
   const PageViewCardsPromotions({super.key});
@@ -13,7 +12,7 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120,
+      height: 127.8,
       width: double.infinity,
       child: PageView(
         controller: PageController(
@@ -24,30 +23,52 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
         children: [
           Container(
             margin: const EdgeInsets.only(right: 20),
-            decoration: BoxDecoration(
-              color: const Color(0xFF2557F5),
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
+              child: Image.asset(
+                'assets/images/promotion_image.png',
+                width: double.infinity,
+              ),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(right: 20),
-            decoration: BoxDecoration(
-              color: AppStyles.primaryColor,
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
+              child: Image.asset(
+                'assets/images/promotion_image.png',
+                width: double.infinity,
+              ),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(right: 20),
-            decoration: BoxDecoration(
-              color: AppStyles.secondaryColor,
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
+              child: Image.asset(
+                'assets/images/promotion_image.png',
+                width: double.infinity,
+              ),
             ),
           ),
           Container(
             margin: const EdgeInsets.only(right: 20),
-            decoration: BoxDecoration(
-              color: AppStyles.bgYellowColor,
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
+              child: Image.asset(
+                'assets/images/promotion_image.png',
+                width: double.infinity,
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(right: 20),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: Image.asset(
+                'assets/images/promotion_image.png',
+                width: double.infinity,
+              ),
             ),
           ),
         ],

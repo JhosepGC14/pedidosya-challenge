@@ -15,7 +15,7 @@ class AppStyles {
   static Color? textColorParagraph = const Color(0xFF0E0520);
 
   static TextStyle heading1 = TextStyle(
-    fontSize: 24.0,
+    fontSize: 20.0,
     fontWeight: FontWeight.bold,
     color: AppStyles.secondaryColor,
   );
@@ -47,6 +47,11 @@ class AppStyles {
       color: AppStyles.colorPlaceholderDark,
       fontSize: 12.00,
       fontWeight: FontWeight.bold);
+
+  static TextStyle textCardTryAgain = TextStyle(
+      color: AppStyles.colorPlaceholderDark,
+      fontSize: 12.00,
+      fontWeight: FontWeight.normal);
 
   static List<BoxShadow>? boxShadowBottomNavigatorBar = const [
     BoxShadow(
