@@ -24,7 +24,7 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
           Container(
             margin: const EdgeInsets.only(right: 20),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(7),
               child: Image.asset(
                 'assets/images/promotion_image.png',
                 width: double.infinity,
@@ -34,7 +34,7 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
           Container(
             margin: const EdgeInsets.only(right: 20),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(7),
               child: Image.asset(
                 'assets/images/promotion_image.png',
                 width: double.infinity,
@@ -44,7 +44,7 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
           Container(
             margin: const EdgeInsets.only(right: 20),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(7),
               child: Image.asset(
                 'assets/images/promotion_image.png',
                 width: double.infinity,
@@ -54,7 +54,7 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
           Container(
             margin: const EdgeInsets.only(right: 20),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(7),
               child: Image.asset(
                 'assets/images/promotion_image.png',
                 width: double.infinity,
@@ -64,7 +64,7 @@ class _PageViewCardsPromotionsState extends State<PageViewCardsPromotions> {
           Container(
             margin: const EdgeInsets.only(right: 20),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: BorderRadius.circular(7),
               child: Image.asset(
                 'assets/images/promotion_image.png',
                 width: double.infinity,

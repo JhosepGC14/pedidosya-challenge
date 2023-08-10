@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_challenge_pedidosya/pages/views.dart';
 
 void main() {
+  // Ensure that Flutter binding is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Lock the app orientation to portrait mode only
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
   runApp(const MainApp());
 }
 

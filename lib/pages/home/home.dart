@@ -5,6 +5,7 @@ import '../../shared/design/design.dart';
 import 'components/banner_order_plus.dart';
 import 'components/box_search_locations.dart';
 import 'components/header_app_bar.dart';
+import 'components/list_products_discovery.dart';
 import 'components/list_section_try_again.dart';
 import 'components/page_view_cards_promotions.dart';
 import 'components/slider_card_type_product.dart';
@@ -106,6 +107,10 @@ class _HomePageState extends State<HomePage> {
                         height: 20,
                       ),
                       ListSectionTryAgain(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      ListProductsDiscovery(),
                       SizedBox(
                         height: 30,
                       ),
