@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -37,91 +38,113 @@ class _HomePageState extends State<HomePage> {
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
-        child: CustomScrollView(
-          scrollDirection: Axis.vertical,
-          slivers: [
-            CupertinoSliverRefreshControl(
-              onRefresh: _onRefresh,
-              refreshIndicatorExtent: 80.0,
-              refreshTriggerPullDistance: 150.00,
-              builder: (BuildContext context,
-                  RefreshIndicatorMode refreshState,
-                  double pulledExtent,
-                  double refreshTriggerPullDistance,
-                  double refreshIndicatorExtent) {
-                // Calculate the percentage of how much the user has pulled to reveal the loader partially.
-                double percentage =
-                    (pulledExtent / refreshTriggerPullDistance).clamp(0.0, 1.0);
-
-                switch (refreshState) {
-                  case RefreshIndicatorMode.drag:
-                    return Center(
-                      child: CupertinoActivityIndicator.partiallyRevealed(
-                        progress: percentage,
-                        color: AppStyles.primaryColor,
-                        radius: 15.00,
-                      ),
-                    );
-                  default:
-                    return Center(
-                      child: CupertinoActivityIndicator(
-                        animating: true,
-                        color: AppStyles.primaryColor,
-                        radius: 15.00,
-                      ),
-                    );
-                }
-              },
-            ),
-            SliverToBoxAdapter(
-              child: ListView(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
+        child: Platform.isIOS
+            ? CustomScrollView(
                 scrollDirection: Axis.vertical,
-                children: const [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      BoxSearchLocations(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      BannerOrderPlus(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      TypeOrderGrid(),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      SliderCardTypeProduct(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      PageViewCardsPromotions(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      ListSectionTryAgain(),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      ListProductsDiscovery(),
-                      SizedBox(
-                        height: 30,
-                      ),
-                    ],
-                  )
+                slivers: [
+                  CupertinoSliverRefreshControl(
+                    onRefresh: _onRefresh,
+                    refreshIndicatorExtent: 80.0,
+                    refreshTriggerPullDistance: 150.0,
+                    builder: (BuildContext context,
+                        RefreshIndicatorMode refreshState,
+                        double pulledExtent,
+                        double refreshTriggerPullDistance,
+                        double refreshIndicatorExtent) {
+                      // Calculate the percentage of how much the user has pulled to reveal the loader partially.
+                      double percentage =
+                          (pulledExtent / refreshTriggerPullDistance)
+                              .clamp(0.0, 1.0);
+
+                      switch (refreshState) {
+                        case RefreshIndicatorMode.drag:
+                          return Center(
+                            child: CupertinoActivityIndicator.partiallyRevealed(
+                              progress: percentage,
+                              color: AppStyles.primaryColor,
+                              radius: 15.0,
+                            ),
+                          );
+                        default:
+                          return Center(
+                            child: CupertinoActivityIndicator(
+                              animating: true,
+                              color: AppStyles.primaryColor,
+                              radius: 15.0,
+                            ),
+                          );
+                      }
+                    },
+                  ),
+                  const SliverToBoxAdapter(
+                    child: _ContentHome(),
+                  ),
                 ],
+              )
+            : RefreshIndicator(
+                onRefresh: _onRefresh,
+                color: AppStyles.primaryColor,
+                child: const CustomScrollView(
+                  scrollDirection: Axis.vertical,
+                  slivers: [
+                    SliverToBoxAdapter(
+                      child: _ContentHome(),
+                    ),
+                  ],
+                ),
               ),
-            )
+      ),
+    );
+  }
+}
+
+class _ContentHome extends StatelessWidget {
+  const _ContentHome();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: const [
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            BoxSearchLocations(),
+            SizedBox(
+              height: 20,
+            ),
+            BannerOrderPlus(),
+            SizedBox(
+              height: 20,
+            ),
+            TypeOrderGrid(),
+            SizedBox(
+              height: 15,
+            ),
+            SliderCardTypeProduct(),
+            SizedBox(
+              height: 20,
+            ),
+            PageViewCardsPromotions(),
+            SizedBox(
+              height: 20,
+            ),
+            ListSectionTryAgain(),
+            SizedBox(
+              height: 30,
+            ),
+            ListProductsDiscovery(),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
-      ),
+      ],
     );
   }
 }
